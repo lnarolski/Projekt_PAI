@@ -1,6 +1,7 @@
 <?php
     echo "TEST PHP\n";
-    for ($i=0; $i < 50; $i++) { 
+    // phpinfo();
+    for ($i=0; $i < 5; $i++) { 
         # code...
         echo "$i\n";
     }
