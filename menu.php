@@ -11,7 +11,12 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="./index.php">Strona główna</a></li>
-        <li><a href="./index.php?subpage=products">Produkty</a></li>
+        <li>
+          <a data-toggle="dropdown" style="background-color:grey;">Produkty</span></a>
+          <ul class="dropdown-menu" style="background-color:grey;">
+			<?php include 'categories.php';?>
+          </ul>
+        </li>
         <li><a href="./index.php?subpage=contact">Kontakt</a></li>
         <li><a href="./index.php?subpage=admin">Panel administracyjny</a></li>
       </ul>

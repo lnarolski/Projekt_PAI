@@ -132,7 +132,7 @@ body {
     margin-bottom: 20px;
     color: #000000;
   }
-  .slideanim {visibility:hidden;}
+  .slideanim {visibility:visible;}
   .slide {
     animation-name: slide;
     -webkit-animation-name: slide;
