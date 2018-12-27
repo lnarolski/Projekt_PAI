@@ -1,0 +1,5 @@
+Strona internetowa sklepu komputerowego
+
+kategorie -> procesor, p³yta g³ówna, karta graficzna, itd.
+podkategorie -> firmy, rodzaje, itd.
+administrator -> modyfikacja produktów i kategorii na stronie
