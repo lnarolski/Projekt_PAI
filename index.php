@@ -35,6 +35,7 @@
         break;
         default:
             // echo "<script type='text/javascript'>alert(\"Nie kombinuj ;)\");</script>";
+            include('home.php');
             break;
     }
 ?>

@@ -180,3 +180,8 @@ body {
     align-self: center;
     color: #000000;
  }
+  .imageCarusel {
+    align-content: center;
+    width: 500px;
+    height: 500px;
+}
