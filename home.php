@@ -1,6 +1,8 @@
 <?php
 
 ?>
+<!-- parallax scrolling -->
+<div class="parallax"></div>
 
 <!-- KARUZELA -->
 <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">

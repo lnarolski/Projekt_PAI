@@ -185,3 +185,28 @@ body {
     width: 500px;
     height: 500px;
 }
+
+.parallax {
+    /* The image used */
+    background-image: url("komputer.jpg");
+  
+    /* Set a specific height */
+    min-height: 500px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.wrapper{
+    width: 50%;
+    margin: auto auto;
+}
+.page-header h2{
+    margin-top: 0;
+}
+table tr td:last-child a{
+    margin-right: 15px;
+}

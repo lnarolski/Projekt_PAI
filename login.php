@@ -4,10 +4,10 @@ include ('config.php');
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     // username and password sent from form 
     
-    $myusername = mysqli_real_escape_string($db,$_POST['username']);
+    $myusername = mysqli_real_escape_string($db,$_POST['login']);
     $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
     
-    $sql = "SELECT id FROM admins WHERE login = '$myusername' and pass = md5($mypassword)";
+    $sql = "SELECT id FROM admins WHERE login = '$myusername' and pass = '" . md5($mypassword) . "'";
     $result = mysqli_query($db,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $active = $row['active'];
@@ -17,12 +17,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // If result matched $myusername and $mypassword, table row must be 1 row
       
     if($count == 1) {
-       session_register("myusername");
        $_SESSION['login_user'] = $myusername;
        
        header("location: index.php?subpage=admin");
     }else {
-       $error = "Nieprawidłowa nazwa użytkownika lub hasło";
+       echo("<label><font color=\"red\">Nieprawidłowa nazwa użytkownika lub hasło</font></label>");
     }
  }
 ?>

@@ -14,7 +14,7 @@
         <li>
           <a data-toggle="dropdown" style="background-color:grey;">Produkty</span></a>
           <ul class="dropdown-menu" style="background-color:grey;">
-			<?php include 'categories.php';?>
+			      <?php include 'categories.php';?>
           </ul>
         </li>
         <li><a href="./index.php?subpage=contact">Kontakt</a></li>
