@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $myusername = mysqli_real_escape_string($db,$_POST['login']);
     $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
 
-    if(!filter_var($myusername, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z_]+$/")))){
+    if(!filter_var($myusername, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z0-9_]+$/")))){
         echo("<center><label><font color=\"red\">Nieprawidłowa nazwa użytkownika</font></label></center>");
     }
     else {
