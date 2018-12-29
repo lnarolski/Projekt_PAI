@@ -7,7 +7,7 @@
             include("./editSubcategories/mainPage.php");
             break;
         case 'products':
-            # code...
+            include("./editProducts/mainPage.php");
             break;
         default:
             include("mainAdminPanel.php");

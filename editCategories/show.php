@@ -4,7 +4,7 @@
                 <div class="col-md-12">
                     <div class="page-header clearfix">
                         <h2 class="pull-left">Kategorie</h2>
-                        <a href="./index.php?subpage=admin&edit=categories&category=add" class="btn btn-success pull-right">Dodaj kategorię</a>
+                        <a href="./index.php?subpage=admin&edit=categories&action=add" class="btn btn-success pull-right">Dodaj kategorię</a>
                     </div>
                     <?php
                     // Include config file

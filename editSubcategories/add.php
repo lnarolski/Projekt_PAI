@@ -2,10 +2,14 @@
 // Include config file
 require_once "config.php";
 mysqli_query($db, "SET NAMES utf8");
- 
+$sql_categories = 'SELECT `id`, `name`
+            FROM `categories`
+            ORDER BY `name`';
+$wynik = mysqli_query($db, $sql_categories);
+
 // Define variables and initialize with empty values
-$name = "";
-$name_err = "";
+$name = $id = "";
+$name_err = $id_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -16,18 +20,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         $name = $input_name;
     }
+
+    // Validate category id
+    $input_id = trim($_POST["id"]);
+    if(empty($input_id)){
+        $id_err = "Niepawidłowa kategoria (parametr wymagany).";     
+    } elseif(!ctype_digit($input_id)){
+        $id_err = "Niepawidłowa kategoria (parametr wymagany).";
+    } else{
+        $id = $input_id;
+    }
     
     // Check input errors before inserting in database
-    if(empty($name_err)){
+    if(empty($name_err) && empty($category_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO categories (name) VALUES (?)";
+        $sql = "INSERT INTO subcategories (name, category) VALUES (?, ?)";
          
         if($stmt = mysqli_prepare($db, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_name);
+            mysqli_stmt_bind_param($stmt, "si", $param_name, $param_id);
             
             // Set parameters
             $param_name = $name;
+            $param_id = $id;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -61,6 +76,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <label>Nazwa podkategorii</label>
                             <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
                             <span class="help-block"><?php echo $name_err;?></span>
+                        </div>
+                        <div class="form-group <?php echo (!empty($id_err)) ? 'has-error' : ''; ?>">
+                            <label>Nazwa kategorii</label></br>
+                            <select name="id">
+                                <?php 
+                                    while ($kategoria = @mysqli_fetch_array($wynik)) {
+                                        $category = $kategoria['name'];
+                                        $id = $kategoria['id'];
+                                        echo("<option value=\"$id\">$category</option>");
+                                    }
+                                ?>
+                            </select>
                         </div>
                         <input formmethod="post" type="submit" class="btn btn-primary" value="Dodaj">
                         <a href="./index.php?subpage=admin&edit=subcategories" class="btn btn-default">Anuluj</a>

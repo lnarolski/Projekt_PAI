@@ -3,15 +3,15 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Podkategorie</h2>
-                        <a href="./index.php?subpage=admin&edit=subcategories&action=add" class="btn btn-success pull-right">Dodaj podkategorię</a>
+                        <h2 class="pull-left">Produkty</h2>
+                        <a href="./index.php?subpage=admin&edit=products&action=add" class="btn btn-success pull-right">Dodaj produkt</a>
                     </div>
                     <?php
                     // Include config file
                     require_once "config.php";
                     mysqli_query($db, "SET NAMES utf8");
                     // Attempt select query execution
-                    $sql = "SELECT subcategories.id, subcategories.name, categories.name AS category FROM subcategories LEFT JOIN categories ON subcategories.category = categories.id";
+                    $sql = "SELECT products.id, products.title, products.description, products.img, (SELECT name FROM categories WHERE categories.id = products.category) AS category, (SELECT name FROM subcategories WHERE subcategories.id = products.subcategory) AS subcategory FROM products";
                     if($result = mysqli_query($db, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo "<table class='table table-bordered table-striped'>";
@@ -19,7 +19,10 @@
                                     echo "<tr>";
                                         echo "<th>#</th>";
                                         echo "<th>Nazwa</th>";
+                                        echo "<th>Opis</th>";
+                                        echo "<th>Zdjęcie</th>";
                                         echo "<th>Kategoria</th>";
+                                        echo "<th>Podkategoria</th>";
                                         echo "<th>Akcje</th>";
                                     echo "</tr>";
                                 echo "</thead>";
@@ -27,11 +30,14 @@
                                 while($row = mysqli_fetch_array($result)){
                                     echo "<tr>";
                                         echo "<td>" . $row['id'] . "</td>";
-                                        echo "<td>" . $row['name'] . "</td>";
+                                        echo "<td>" . $row['title'] . "</td>";
+                                        echo "<td>" . $row['description'] . "</td>";
+                                        echo "<td>" . $row['img'] . "</td>";
                                         echo "<td>" . $row['category'] . "</td>";
+                                        echo "<td>" . $row['subcategory'] . "</td>";
                                         echo "<td>";
-                                            echo "<a href='./index.php?subpage=admin&edit=subcategories&action=edit&id=". $row['id'] ."' title='Edytuj podkategorię' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                            echo "<a href='./index.php?subpage=admin&edit=subcategories&action=del&id=". $row['id'] ."' title='Usuń podkategorię' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                            echo "<a href='./index.php?subpage=admin&edit=products&action=edit&id=". $row['id'] ."' title='Edytuj produkt' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                            echo "<a href='./index.php?subpage=admin&edit=products&action=del&id=". $row['id'] ."' title='Usuń produkt' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
                                         echo "</td>";
                                     echo "</tr>";
                                 }
@@ -40,7 +46,7 @@
                             // Free result set
                             mysqli_free_result($result);
                         } else{
-                            echo "<p class='lead'><em>Brak podkategorii produktów.</em></p>";
+                            echo "<p class='lead'><em>Brak produktów.</em></p>";
                         }
                     } else{
                         echo "ERROR: Could not able to execute $sql. " . mysqli_error($db);

@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
        
        header("location: index.php?subpage=admin");
     }else {
-       echo("<label><font color=\"red\">Nieprawidłowa nazwa użytkownika lub hasło</font></label>");
+       echo("<center><label><font color=\"red\">Nieprawidłowa nazwa użytkownika lub hasło</font></label></center>");
     }
  }
 ?>

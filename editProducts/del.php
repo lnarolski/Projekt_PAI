@@ -5,7 +5,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     require_once "config.php";
     
     // Prepare a delete statement
-    $sql = "DELETE FROM subcategories WHERE id = ?";
+    $sql = "DELETE FROM products WHERE id = ?";
     
     if($stmt = mysqli_prepare($db, $sql)){
         // Bind variables to the prepared statement as parameters
@@ -17,7 +17,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
             // Records deleted successfully. Redirect to landing page
-            header("location: ./index.php?subpage=admin&edit=subcategories");
+            header("location: ./index.php?subpage=admin&edit=products");
             exit();
         } else{
             echo "Wystąpił problem. Spróbuj ponownie później.";
@@ -44,15 +44,15 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h1>Usuń podkategorię</h1>
+                        <h1>Usuń produkt</h1>
                     </div>
-                    <form action="./index.php?subpage=admin&edit=subcategories&action=del" method="post">
+                    <form action="./index.php?subpage=admin&edit=products&action=del" method="post">
                         <div class="alert alert-danger fade in">
                             <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>"/>
-                            <p>Czy na pewno chcesz usunąć podkategorię?</p><br>
+                            <p>Czy na pewno chcesz usunąć produkt?</p><br>
                             <p>
                                 <input type="submit" value="Tak" class="btn btn-danger">
-                                <a href="./index.php?subpage=admin&edit=subcategories" class="btn btn-default">Nie</a>
+                                <a href="./index.php?subpage=admin&edit=products" class="btn btn-default">Nie</a>
                             </p>
                         </div>
                     </form>
