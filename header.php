@@ -13,6 +13,7 @@
         case 'admin':
             break;
         case 'products':
+            echo "<link href=\"src/css/lightbox.css\" rel=\"stylesheet\">";
             break;
         case 'contact':
             break;

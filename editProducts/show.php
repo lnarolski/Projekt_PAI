@@ -17,7 +17,7 @@
                             echo "<table class='table table-bordered table-striped'>";
                                 echo "<thead>";
                                     echo "<tr>";
-                                        echo "<th>#</th>";
+                                        // echo "<th>#</th>";
                                         echo "<th>Nazwa</th>";
                                         echo "<th>Opis</th>";
                                         echo "<th>Zdjęcie</th>";
@@ -29,7 +29,7 @@
                                 echo "<tbody>";
                                 while($row = mysqli_fetch_array($result)){
                                     echo "<tr>";
-                                        echo "<td>" . $row['id'] . "</td>";
+                                        // echo "<td>" . $row['id'] . "</td>";
                                         echo "<td>" . $row['title'] . "</td>";
                                         echo "<td>" . $row['description'] . "</td>";
                                         echo "<td>" . $row['img'] . "</td>";

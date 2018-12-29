@@ -201,7 +201,7 @@ body {
   }
 
 .wrapper{
-    width: 50%;
+    width: 80%;
     margin: auto auto;
 }
 .page-header h2{
@@ -209,4 +209,20 @@ body {
 }
 table tr td:last-child a{
     margin-right: 15px;
+    width: 50%;
+    margin: auto auto;
+    table-layout: fixed;
+}
+
+.centered{
+  width: 50%;
+  margin: auto auto;
+}
+
+.description {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 20%;
+  margin-right: 20%;
 }

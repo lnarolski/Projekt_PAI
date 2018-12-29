@@ -17,7 +17,7 @@
                             echo "<table class='table table-bordered table-striped'>";
                                 echo "<thead>";
                                     echo "<tr>";
-                                        echo "<th>#</th>";
+                                        // echo "<th>#</th>";
                                         echo "<th>Nazwa</th>";
                                         echo "<th>Akcje</th>";
                                     echo "</tr>";
@@ -25,7 +25,7 @@
                                 echo "<tbody>";
                                 while($row = mysqli_fetch_array($result)){
                                     echo "<tr>";
-                                        echo "<td>" . $row['id'] . "</td>";
+                                        // echo "<td>" . $row['id'] . "</td>";
                                         echo "<td>" . $row['name'] . "</td>";
                                         echo "<td>";
                                             echo "<a href='./index.php?subpage=admin&edit=categories&action=edit&id=". $row['id'] ."' title='Edytuj kategorię' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";

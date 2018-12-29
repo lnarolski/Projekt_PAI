@@ -18,17 +18,18 @@ if (mysqli_num_rows($wynik) > 0) {
             echo "<li><font color=\"white\">".$kategoria['name']."</font></li>" . PHP_EOL;
             echo "<ul>" . PHP_EOL;
             while ($podkategoria = @mysqli_fetch_array($wynik2)) {
-                echo '<li><a href="' . $_SERVER["PHP_SELF"] . '?category=' . $kategoria['id'] . "&subcategory=" . $podkategoria['id'] . '">' . $podkategoria['name'] . '</a></li>' . PHP_EOL;
+                echo '<li><a href="' . $_SERVER["PHP_SELF"] . '?subpage=products&category=' . $kategoria['id'] . "&subcategory=" . $podkategoria['id'] . '">' . $podkategoria['name'] . '</a></li>' . PHP_EOL;
             }
             echo "</ul>" . PHP_EOL;
         }
         else {
-            echo '<li><a href="' . $_SERVER["PHP_SELF"] . '?category=' . $kategoria['id'] . '">' . $kategoria['name'] . '</a></li>' . PHP_EOL;
+            echo '<li><a href="' . $_SERVER["PHP_SELF"] . '?subpage=products&category=' . $kategoria['id'] . '">' . $kategoria['name'] . '</a></li>' . PHP_EOL;
         }
         echo "</ul>" . PHP_EOL;
     }
-} else {
-echo 'wyników 0';
+} 
+else {
+    echo 'wyników 0';
 }
 
 mysqli_close($db);
