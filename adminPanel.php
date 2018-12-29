@@ -9,6 +9,9 @@
         case 'products':
             include("./editProducts/mainPage.php");
             break;
+        case 'admins':
+            include("./editAdmins/mainPage.php");
+            break;
         default:
             include("mainAdminPanel.php");
             break;

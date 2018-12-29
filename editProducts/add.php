@@ -113,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </div>
                         <div class="form-group <?php echo (!empty($description_err)) ? 'has-error' : ''; ?>">
                             <label>Opis produktu</label>
-                            <input type="text" name="description" class="form-control" value="<?php echo $description; ?>">
+                            <textarea name="description" class="form-control"><?php echo $description; ?></textarea>
                             <span class="help-block"><?php echo $description_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($img_err)) ? 'has-error' : ''; ?>">

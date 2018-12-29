@@ -75,6 +75,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             $param_description = $description;
             $param_img = $img;
             $param_category = $category;
+            
             if ($subcategory == -1) {
                 $param_subcategory = NULL;
             }
@@ -169,7 +170,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                         </div>
                         <div class="form-group <?php echo (!empty($description_err)) ? 'has-error' : ''; ?>">
                             <label>Opis produktu</label>
-                            <input type="text" name="description" class="form-control" value="<?php echo $description; ?>">
+                            <textarea name="description" class="form-control"><?php echo $description; ?></textarea>
                             <span class="help-block"><?php echo $description_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($img_err)) ? 'has-error' : ''; ?>">

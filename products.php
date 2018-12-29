@@ -24,7 +24,7 @@
         if ($result = mysqli_query($db, $sql)) {
             if (mysqli_num_rows($result) > 0) {
                 while (($product = @mysqli_fetch_array($result))) {
-                    echo '<center><p><b>' . $product['title'] . '</b></br> ' . '<a class="center_div" href="'.$product['img'].'" data-lightbox="example-1"><img width="50%" height="50%" class="example-image" src="'.$product['img'].'" alt="image-1" /></a></br><p align="justify" class="description">' . $product['description'] . '</p></p></center></br></br>' . PHP_EOL;
+                    echo '<center><p><b>' . $product['title'] . '</b></br> ' . '<a class="center_div" href="'.$product['img'].'" data-lightbox="example-1"><img width="50%" height="50%" class="example-image" src="'.$product['img'].'" alt="image-1" /></a></br><p align="justify" class="description" style="white-space:pre-wrap; word-wrap:break-word">' . $product['description'] . '</p></p></center></br></br>' . PHP_EOL;
                 }
             }
             else {

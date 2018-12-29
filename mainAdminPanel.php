@@ -7,6 +7,9 @@
     </br>
     <form method="post" action="./index.php?subpage=admin&edit=products">
     <input type="submit" value="Edytuj produkty"/><br/></form>
+    </br>
+    <form method="post" action="./index.php?subpage=admin&edit=admins">
+    <input type="submit" value="Edytuj administratorów"/><br/></form>
     </br></br>
     <p class="rozne">Aby wylogować naciśnij poniższy przycisk:<br/>
     <form method="post" action="logout.php">
