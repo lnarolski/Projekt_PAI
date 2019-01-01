@@ -1,3 +1,4 @@
+<!-- Dane konfiguracyjne oraz łączenie z bazą danych -->
 <?php
    define('DB_SERVER', 'localhost');
    define('DB_USERNAME', 'root');

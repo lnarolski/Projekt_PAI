@@ -1,3 +1,5 @@
+<!-- GŁÓWNY SZKIELET STRONY INTERNETOWEJ -->
+
 <?php
     error_reporting(E_ALL & ~E_NOTICE);
 ?>
@@ -20,7 +22,7 @@
 <?php
     switch ($_GET["subpage"]) {
         case 'admin':
-        include('config.php');
+            include('config.php');
             session_start();
             $user_check = $_SESSION['login_user'];
             $ses_sql = mysqli_query($db,"select login from admins where login = '$user_check' ");

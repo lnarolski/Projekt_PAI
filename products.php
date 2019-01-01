@@ -1,3 +1,5 @@
+<!-- Tworzenie strony z produktami na podstawie bazy danych i wybranej kategorii/podkategorii -->
+
 <?php
     include("config.php");
     if (isset($_GET['category'])) {
@@ -37,7 +39,7 @@
         mysqli_close($db);
     }
     else {
-        echo("<center><label><font color=\"red\">Nieprawidłowa nazwa użytkownika lub hasło</font></label></center>");
+        echo("<center><label><font color=\"red\">Brak kategorii produktów</font></label></center>");
     }
 ?>
 

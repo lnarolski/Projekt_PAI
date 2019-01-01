@@ -1,4 +1,4 @@
-  <!-- Theme Made By www.w3schools.com -->
+  <!-- Naglowek (head) strony -->
   <title>Sklep komputerowy</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">

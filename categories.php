@@ -1,3 +1,4 @@
+<!-- Generowanie kategorii i podkategorii w menu -->
 <?php
 include('config.php');
 @mysqli_query($db, 'SET NAMES utf8');

@@ -1,3 +1,5 @@
+<!-- Menu strony -->
+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
@@ -14,7 +16,7 @@
         <li>
           <a data-toggle="dropdown" style="background-color:grey;">Produkty</span></a>
           <ul class="dropdown-menu" style="background-color:grey;">
-			      <?php include 'categories.php';?>
+			      <?php include 'categories.php'; //dynamiczne generowanie kategorii i podkategorii na podstawie bazy danych ?>
           </ul>
         </li>
         <li><a href="./index.php?subpage=contact">Kontakt</a></li>

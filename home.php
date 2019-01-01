@@ -1,6 +1,5 @@
-<?php
+<!-- STRONA GŁÓWNA -->
 
-?>
 <!-- parallax scrolling -->
 <div class="parallax"></div>
 
@@ -90,4 +89,4 @@
 </div> <!-- end container -->
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://use.fontawesome.com/df678b889c.js"></script>
+<!-- <script src="https://use.fontawesome.com/df678b889c.js"></script> -->

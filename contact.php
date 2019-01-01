@@ -1,4 +1,4 @@
-<!-- Container (Contact Section) -->
+<!-- Podstrona "Kontakt" -->
 <meta charset="UTF-8">
 <div id="contact" class="container-fluid bg-grey">
   <h2 class="text-center">Kontakt</h2>
@@ -19,7 +19,7 @@
                 <input class="form-control" id="email" name="email" placeholder="E-mail" type="email" required>
                 </div>
             </div>
-            <textarea class="form-control" id="comments" name="wiadomosc" placeholder="Wiadomość" rows="5"></textarea><br>
+            <textarea class="form-control" id="wiadomosc" name="wiadomosc" placeholder="Wiadomość" rows="5"></textarea><br>
             <div class="row">
                 <div class="col-sm-12 form-group">
                 <button class="btn btn-default pull-right" type="submit">Wyślij</button>

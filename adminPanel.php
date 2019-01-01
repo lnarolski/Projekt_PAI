@@ -1,3 +1,4 @@
+<!-- Panel administracyjny po zalogowaniu -->
 <?php
     switch ($_GET["edit"]) {
         case 'categories':
@@ -16,6 +17,4 @@
             include("mainAdminPanel.php");
             break;
     }
-
-    
 ?>

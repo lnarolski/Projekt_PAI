@@ -1,3 +1,5 @@
+<!-- Panel administracyjny po zalogowaniu -->
+
 <div align="center">
     <form method="post" action="./index.php?subpage=admin&edit=categories">
     <input type="submit" value="Edytuj kategorie"/><br/></form>
