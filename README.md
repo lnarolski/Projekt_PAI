@@ -5,3 +5,5 @@ Projekt dynamicznej strony internetowej na przedmiot Podstawy Aplikacji Internet
 
 # Opis
 Strona internetowa wykorzystuje Bootstrap oraz skrypty JavaSript. Posiada obsługę użytkowników (tutaj administratorów) i CRUD. Plik db.sql jest wyeksportowaną bazą danych MySQL, która była wykorzystana do testów.
+
+# [Zrzuty ekranu](https://github.com/lnarolski/Projekt_PAI/tree/master/Screenshots)
